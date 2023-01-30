@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import styles from './Welcome.module.css';
+import logo from '../logo.svg';
+import styles from '../main-stylesheets/Welcome.module.css';
 
 class Welcome extends Component {
     render() {
