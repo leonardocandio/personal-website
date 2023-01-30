@@ -1,7 +1,7 @@
 import React from 'react';
-import Welcome from "./Welcome";
-import './App.css';
+import styles from './App.module.css';
 import Navbar from "./Navbar";
+import Main from "./Main";
 
 interface Repositories {
     repositories: Repository [];
@@ -39,9 +39,9 @@ interface RepositoryOwner {
 function App() {
 
     return (
-        <div className="App">
+        <div className={styles["App"]}>
             <Navbar/>
-            <Welcome/>
+            <Main/>
         </div>
     )
 }
