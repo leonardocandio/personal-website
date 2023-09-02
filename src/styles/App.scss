@@ -1,0 +1,7 @@
+@import "theme-variables";
+
+.App {
+  @include themify($themes) {
+    background-color: themed('toggleBackground');
+  }
+}
