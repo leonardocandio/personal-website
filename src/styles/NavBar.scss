@@ -1,0 +1,25 @@
+.navigation-bar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navigation-bar {
+  height: 4em;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2)
+
+}
+.navigation-link-section {
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+}
+
+.toggle-theme-section {
+  margin: 20px
+}
+
+.logo-section {
+  font-size: 3ex;
+  margin: auto auto auto auto;
+}

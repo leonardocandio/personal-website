@@ -1,0 +1,10 @@
+@import 'theme-variables';
+
+.navigation-link {
+  @include themify($themes) {
+    background-color: themed('headerFooterBackground');
+  }
+  text-align: center;
+  display: inline-block;
+  margin: 1%;
+}

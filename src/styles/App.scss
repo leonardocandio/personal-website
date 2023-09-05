@@ -2,6 +2,7 @@
 
 .App {
   @include themify($themes) {
-    background-color: themed('toggleBackground');
+    background-color: themed('background-color');
+    color: themed('color');
   }
 }

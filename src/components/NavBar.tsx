@@ -1,37 +1,51 @@
 import React, {Component} from 'react';
-import {ThemeContext} from "../theme-context";
+import ToggleThemeBtn from "./ToggleThemeBtn";
+import NavBtn from "./NavBtn";
+import "../styles/NavBar.css"
 
+interface NavLink {
+    name: string,
+    ref: string,
+}
 
 class NavBar extends Component {
-    static contextType = ThemeContext;
-    context!: React.ContextType<typeof ThemeContext>;
+
+    smoothScroll(target: number) {
+        window.scrollTo({
+            top: target,
+            left: 0,
+            behavior: "smooth",
+        })
+    };
+
 
     render() {
-        const {theme, setTheme} = this.context;
-        const handleThemeChange = () => {
-            const isCurrentDark = theme === 'dark';
-            setTheme(isCurrentDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isCurrentDark ? 'light' : 'dark')
-        };
+
+        const navLinks: NavLink[] = [
+            {
+                name: "work", ref: "test"
+            }, {
+                name: "open source", ref: "test2"
+            }, {
+                name: "about me", ref: "fefa"
+            }, {
+                name: "contact me", ref: "feasd"
+            }
+        ]
 
         return (
-            <header className="header">
-                <div className="header-content">
-                    <a href="/" className="logo-section">
-                        <span>Light/Dark mode app</span>
-                    </a>
-                    <div className="toggle-btn-section">
-                        <div className={`toggle-checkbox m-vertical-auto`}>
-                            <input
-                                className="toggle-btn__input"
-                                type="checkbox"
-                                name="checkbox"
-                                onChange={handleThemeChange}
-                                checked={theme === 'light'}
-                            />
-                            <button type="button" className={`toggle-btn__input-label`}
-                                    onClick={handleThemeChange}></button>
-                        </div>
+            <header className="navigation-bar">
+                <div className="navigation-bar-content">
+                    <div className={"logo-section"}>
+                        <span>leonardo candio</span>
+                    </div>
+                    <div className={"navigation-link-section"}>
+                        {navLinks.map((link: NavLink) => (
+                            <NavBtn {...link}/>
+                        ))}
+                    </div>
+                    <div className="toggle-theme-section">
+                        <ToggleThemeBtn/>
                     </div>
                 </div>
             </header>
