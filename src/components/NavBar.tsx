@@ -1,47 +1,26 @@
-import React, {Component} from 'react';
+import React, {Component, createRef, MouseEventHandler, RefObject, useRef} from 'react';
 import ToggleThemeBtn from "./ToggleThemeBtn";
 import NavBtn from "./NavBtn";
+import {INavLink} from "../App";
 import "../styles/NavBar.css"
 
-interface NavLink {
-    name: string,
-    ref: string,
+interface IProps {
+    navLinks: INavLink[]
 }
 
-class NavBar extends Component {
-
-    smoothScroll(target: number) {
-        window.scrollTo({
-            top: target,
-            left: 0,
-            behavior: "smooth",
-        })
-    };
-
+class NavBar extends Component<IProps> {
 
     render() {
-
-        const navLinks: NavLink[] = [
-            {
-                name: "work", ref: "test"
-            }, {
-                name: "open source", ref: "test2"
-            }, {
-                name: "about me", ref: "fefa"
-            }, {
-                name: "contact me", ref: "feasd"
-            }
-        ]
-
+        let id = 0;
         return (
             <header className="navigation-bar">
                 <div className="navigation-bar-content">
-                    <div className={"logo-section"}>
+                    <div className={"logo-section"} onClick={() => window.scrollTo({top: 0, behavior: "smooth"})}>
                         <span>leonardo candio</span>
                     </div>
                     <div className={"navigation-link-section"}>
-                        {navLinks.map((link: NavLink) => (
-                            <NavBtn {...link}/>
+                        {this.props.navLinks.map((link) => (
+                            <NavBtn key={id++} name={link.name} compRef={link.compRef}/>
                         ))}
                     </div>
                     <div className="toggle-theme-section">

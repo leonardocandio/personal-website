@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, RefObject} from 'react';
 
 interface Repository {
-    name: string
+    name: string,
+    description: string
 }
 
 interface IProps {
+    compRef: RefObject<any>
 }
 
 interface IState {
@@ -13,6 +15,10 @@ interface IState {
 
 class Repositories extends Component<IProps, IState> {
 
+    constructor(props: IProps | Readonly<IProps>) {
+        super(props);
+        this.state = {repositories: []}
+    }
 
     async getRepositories(): Promise<Repository[]> {
         return fetch("https://api.github.com/users/leonardocandio/repos").then((res => res.json()))
@@ -23,11 +29,13 @@ class Repositories extends Component<IProps, IState> {
     }
 
     render() {
+        let id = 0;
         return (
-            <div>
-                {this.state && this.state.repositories.map((repo: Repository) => (
-                    <div>
-                        {repo.name}
+            <div ref={this.props.compRef}>
+                {this.state.repositories.map((repo: Repository) => (
+                    <div key={id++}>
+                        {repo.name} <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                        {repo.description}
                     </div>
                 ))}
             </div>
