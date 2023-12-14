@@ -2,7 +2,7 @@
 
 .App {
   @include themify($themes) {
-    background-color: themed('background-color');
-    color: themed('color');
+    background-color: themed('background');
+    color: themed('paragraph');
   }
 }

@@ -1,8 +1,10 @@
 import React, {Component, RefObject} from 'react';
+import "../styles/Repositories.css"
 
 interface Repository {
     name: string,
-    description: string
+    description: string,
+    html_url: string
 }
 
 interface IProps {
@@ -31,13 +33,16 @@ class Repositories extends Component<IProps, IState> {
     render() {
         let id = 0;
         return (
-            <div ref={this.props.compRef}>
-                {this.state.repositories.map((repo: Repository) => (
-                    <div key={id++}>
-                        {repo.name} <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                        {repo.description}
-                    </div>
-                ))}
+            <div ref={this.props.compRef} className={"repositories"}>
+                <div className={"repositories-container"}>
+                    {this.state.repositories.map((repo: Repository) => (
+                        <div key={id++} className={"repositories-card"}>
+                            <a href={repo.html_url}> {repo.name}</a>
+                            <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                            {repo.description}
+                        </div>
+                    ))}
+                </div>
             </div>
         );
     }

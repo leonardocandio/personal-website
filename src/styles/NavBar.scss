@@ -1,31 +1,47 @@
+@import 'theme-variables';
+
 .navigation-bar-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  display: grid;
+  grid-auto-columns: max-content;
+  grid-template-columns: 1fr max-content max-content max-content max-content max-content;
+  grid-gap: 1em;
+  grid-template-rows: auto;
   align-items: center;
 }
 
 .navigation-bar {
-  height: 4em;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2)
-
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1% 2%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 1000;
+}
+.hidden {
+  visibility: hidden;
+  transition: all 300ms ease-out;
+  transform: translate(0, -100%);
 }
 
-.navigation-link-section {
-  display: flex;
-  justify-content: space-evenly;
-  width: 400px;
+.active {
+  visibility: visible;
+  transition: all 300ms ease-in;
 }
 
 .toggle-theme-section {
-  margin: 20px
+  margin: 10%;
 }
 
 .logo-section {
-  font-size: 3ex;
-  margin: auto auto auto auto;
+  @include themify($themes) {
+    color: themed('headline');
+  }
+  font-size: 3.5ex;
 }
 
-.logo-section:hover {
+.logo-section > span:hover {
   cursor: pointer;
 }

@@ -1,7 +1,8 @@
 .toggle-theme-btn {
-  --size: 2rem;
+  --size: 1.4rem;
 
   appearance: none;
+  margin: 0;
   outline: none;
   cursor: pointer;
   width: var(--size);
@@ -10,7 +11,7 @@
   border-radius: 999px;
   color: hsl(240, 100%, 95%);
 
-  transition: all 500ms;
+  transition: all 300ms;
 
   &:checked {
     --ray-size: calc(var(--size) * -0.4);

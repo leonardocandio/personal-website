@@ -1,19 +1,28 @@
 $themes: (
         light: (
-                bodyBackgroundColor: #f8f8fa,
-                headerFooterBackground: #fff,
-                color: #000,
-                background-color: #dfe4ea,
-
+                background: #fffffe,
+                headline: #094967,
+                paragraph: #5f6c7b,
+                button: #3da9fc,
+                button-text: #fffffe,
+                stroke: #094067,
+                highlight: #3da9fc,
+                secondary: #90b4ce,
+                tertiary: #ef4565
         ),
-        dark: (
-                bodyBackgroundColor: #222736,
-                headerFooterBackground: #36394c,
-                color: #eff2f7,
-                background-color: #606071,
-
+        dark:(
+                background: #121212,
+                headline: #FFFFFF,
+                paragraph: #B3B3B3,
+                button: #007BFF,
+                button-text: #FFFFFF,
+                stroke: #094067,
+                highlight: #007BFF,
+                secondary: #90b4ce,
+                tertiary: #FF5733,
         )
 );
+
 @mixin themify($themes) {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {

@@ -11,7 +11,7 @@ class MainPage extends Component<IProps> {
 
     render() {
         return (
-            <div>
+            <div className={"main-content"}>
                 <Welcome compRef={this.props.navLinks[2].compRef}/>
                 <Repositories compRef={this.props.navLinks[1].compRef}/>
             </div>

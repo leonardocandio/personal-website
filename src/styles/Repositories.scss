@@ -1,0 +1,16 @@
+@import "theme-variables";
+
+.repositories {
+  @include themify($themes) {
+    background-color: themed('headline');
+  }
+}
+.repositories-container {
+  @include themify($themes) {
+    background-color: themed('headline');
+  }
+}
+
+.repositories-card {
+  
+}

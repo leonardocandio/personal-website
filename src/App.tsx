@@ -1,4 +1,4 @@
-import React, {createRef, ReactComponentElement, RefObject, useState} from 'react';
+import React, {createRef, RefObject, useState} from 'react';
 
 import './styles/App.css';
 import {ThemeContext, defaultState} from "./theme-context";
@@ -14,7 +14,7 @@ export interface INavLink {
 
 function App() {
     const [theme, setTheme] = useState(defaultState.theme);
-    const [links, setLinks] = useState<INavLink[]>(
+    const [links] = useState<INavLink[]>(
         [{name: "work", compRef: createRef()},
             {name: "open source", compRef: createRef()},
             {name: "about me", compRef: createRef()},

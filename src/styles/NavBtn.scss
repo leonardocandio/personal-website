@@ -2,12 +2,14 @@
 
 .navigation-link {
   @include themify($themes) {
-    background-color: themed('headerFooterBackground');
+    color: themed('headline');
   }
-  text-align: center;
-  display: inline-block;
-  margin: 1%;
+  font-size: 2.15ex;
 }
+button {
+  all: unset;
+}
+
 
 .navigation-link:hover {
   cursor: pointer;

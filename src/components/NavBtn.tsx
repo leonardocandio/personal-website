@@ -1,5 +1,6 @@
 import React, {Component, RefObject} from 'react';
 import "../styles/NavBtn.css"
+import "../styles/MainPage.css"
 
 interface Props {
     name: string,
@@ -9,13 +10,13 @@ interface Props {
 class NavBtn extends Component<Props> {
 
     render() {
-        const scrollToSection = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        const scrollToSection = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             this.props.compRef.current.scrollIntoView({behavior: "smooth"})
         }
         return (
-            <div className={"navigation-link"} onClick={scrollToSection}>
+            <button className={"navigation-link"} onClick={scrollToSection}>
                 {this.props.name}
-            </div>
+            </button>
         );
     }
 }
