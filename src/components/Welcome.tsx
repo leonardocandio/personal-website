@@ -1,5 +1,7 @@
 import React, {Component, RefObject} from 'react';
-
+import "../styles/Welcome.css"
+import imgwebp from "../images/headshot.webp"
+import imgjpeg from "../images/headshot.jpeg"
 interface IProps {
     compRef: RefObject<any>,
 }
@@ -7,9 +9,12 @@ interface IProps {
 class Welcome extends Component<IProps> {
     render() {
         return (
-            <div style={{"fontSize": 100}} ref={this.props.compRef}>
-                This is the welcome to this page <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                <br/> <br/> <br/>end welcome
+            <div ref={this.props.compRef} className={"welcome-content"}>
+                <p>i'm a <b>computer science</b> undergrad currently focused on pursuing a phd in <b>artificial intelligence</b></p>
+                <picture style={{display: "none"}}>
+                    <source srcSet={imgwebp} />
+                    <img src={imgjpeg} alt={"Leonardo Candio"}/>
+                </picture>
             </div>
         );
     }

@@ -1,0 +1,27 @@
+@import 'theme-variables';
+
+.welcome-content {
+  font-size: 4em;
+  font-weight: normal;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  p {
+    margin: 0;
+
+    b {
+      @include themify($themes) {
+        color: themed('stroke');
+      }
+    }
+  }
+
+  picture {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}

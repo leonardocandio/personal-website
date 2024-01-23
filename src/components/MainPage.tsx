@@ -14,6 +14,7 @@ class MainPage extends Component<IProps> {
             <div className={"main-content"}>
                 <Welcome compRef={this.props.navLinks[2].compRef}/>
                 <Repositories compRef={this.props.navLinks[1].compRef}/>
+                <span>developed by leonardo candio</span>
             </div>
         );
     }
