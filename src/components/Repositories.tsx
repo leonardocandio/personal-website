@@ -34,11 +34,12 @@ class Repositories extends Component<IProps, IState> {
         let id = 0;
         return (
             <div ref={this.props.compRef} className={"repositories"}>
+                <h1>open source</h1>
+                <p>here you can find all of the open source projects i've published on my <a href={"https://github.com/leonardocandio"}>github page</a> (including the code to this page)</p>
                 <div className={"repositories-container"}>
                     {this.state.repositories.map((repo: Repository) => (
                         <div key={id++} className={"repositories-card"}>
                             <a href={repo.html_url}> {repo.name}</a>
-                            <br/> <br/> <br/> <br/> <br/> <br/> <br/>
                             {repo.description}
                         </div>
                     ))}

@@ -2,15 +2,26 @@
 
 .repositories {
   @include themify($themes) {
-    background-color: themed('headline');
+    background-color: themed('background');
   }
 }
 .repositories-container {
-  @include themify($themes) {
-    background-color: themed('headline');
-  }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .repositories-card {
-  
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    transition: all 300ms ease-in-out;
 }
+.repositories-card > a {
+    text-decoration: none;
+    color: inherit;
+}
+
